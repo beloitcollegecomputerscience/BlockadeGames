@@ -1,5 +1,11 @@
 package blockadeGames;
 
+/**
+ * Keep track of the current player turn and store players' name
+ * @author jerry
+ *
+ */
+
 public class PlayerTurn {
 	public static String player1_name = "Player 1";
 	public static String player2_name = "Player 2";
