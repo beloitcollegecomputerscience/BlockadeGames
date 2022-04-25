@@ -1,4 +1,4 @@
-package blockadeGames;
+package application;
 
 public class PlayingPieces {
 	public static int[] boardPosition = {0, 1}; //which piece is black which piece are white
