@@ -1,1 +1,0 @@
-<Ky Oh>,<Working on creating a first version of a GUI front-end to the program>
