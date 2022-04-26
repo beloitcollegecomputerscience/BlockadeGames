@@ -1,4 +1,4 @@
-package blockadeGames;
+package application;
 
 /**
  * Keep track of the current player turn and store players' name
