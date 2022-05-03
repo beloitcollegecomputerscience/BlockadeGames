@@ -35,6 +35,21 @@ public class PlayingPieces {
 		return -1;
 	}
 	
+	/**
+	 * It checks whether a piece is adjacent to the blank space or not.
+	 * @param position the position of the piece
+	 * @return returns true if the piece returns to the current player, else returns false.
+	 */
+	private static boolean adjacentToBlank(int position) {
+		boolean flag = false;
+		int blankPosition = blankPosition();
+		for(int i = 0; i < GAME_SIZE; ++i) {
+			if(i == blankPosition) continue;
+			flag |= (GameBoard.areThesePositionsConnected(blankPosition, i) && (i == position));
+		}
+		return flag;
+	}
+	
 	public static void main(String [] args) {
 		System.out.print(boardToString());
 	}
