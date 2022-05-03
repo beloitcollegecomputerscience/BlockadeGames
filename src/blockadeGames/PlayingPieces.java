@@ -68,6 +68,21 @@ public class PlayingPieces {
 		return (adjacentNode > 2);
 	}
 	
+	/**
+	 * It checks if the current player won the game.
+	 * @return returns true if the current player won the game, else returns false.
+	 */
+	public static boolean isWon() {
+		int blankPosition = blankPosition();
+		int playerBinary = PlayerTurn.getCurrentPlayer();
+		boolean flag = false;
+		for(int i = 0; i < GAME_SIZE; ++i) {
+			if(playerBinary == boardPosition[i]) continue;
+			flag |= (GameBoard.areThesePositionsConnected(i, blankPosition));
+		}
+		return (!flag);
+	}
+	
 	public static void main(String [] args) {
 		System.out.print(boardToString());
 	}
