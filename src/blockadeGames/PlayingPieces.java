@@ -83,6 +83,18 @@ public class PlayingPieces {
 		return (!flag);
 	}
 	
+	
+	/**
+	 * It updates the board's layout after making move.
+	 * @param moveFrom the position of the moved piece.
+	 */
+	public static void makeMove(int moveFrom) {
+		int blankPosition = blankPosition();
+		boardPosition[blankPosition] = boardPosition[moveFrom];
+		boardPosition[moveFrom] = -1;
+		++step;
+	}
+	
 	public static void main(String [] args) {
 		System.out.print(boardToString());
 	}
