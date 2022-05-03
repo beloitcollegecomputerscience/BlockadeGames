@@ -50,6 +50,24 @@ public class PlayingPieces {
 		return flag;
 	}
 	
+	
+	/**
+	 * It checks if it is legal to play a piece at the first move.
+	 * @param position the position of the piece
+	 * @return returns true if it is legal to play the piece at the first move, else returns false.
+	 */
+	private static boolean isLegalWithSpecialCase(int position) {
+		if(step != 0) return true;
+		int adjacentNode = 0;
+		for(int i = 0; i < GAME_SIZE; ++i) {
+			if(i == position) continue;
+			if(GameBoard.areThesePositionsConnected(position, i)) {
+				adjacentNode += 1;
+			}
+		}
+		return (adjacentNode > 2);
+	}
+	
 	public static void main(String [] args) {
 		System.out.print(boardToString());
 	}
