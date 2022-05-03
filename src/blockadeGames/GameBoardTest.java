@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
  */
 
 class GameBoardTest {
-
 	@Test
 	public void testConnection(){
 		GameBoard gb = new GameBoard();
