@@ -1,16 +1,9 @@
 package blockadeGames;
 
 public class PlayingPieces {
+	public static final int GAME_SIZE = 5;
+	private static int step = 0;
 	public static int[] boardPosition = {0, 0, -1, 1, 1}; //which piece is black which piece are white
-
-	/**
-	 * It checks whether a piece belongs to the current player or not.
-	 * @param position the position of the piece
-	 * @return returns true if the piece returns to the current player, else returns false.
-	 */
-	private static boolean isBelongTo(int position) {
-		return (boardPosition[position] == PlayerTurn.getCurrentPlayer());
-	}
 	
 	private static String boardToString() {
 		String board = "";
@@ -21,7 +14,27 @@ public class PlayingPieces {
 		board += boardPosition[3] + "==" + boardPosition[4] + "\n";
 		return board;
 	}
-
+	
+	/**
+	 * It checks whether a piece belongs to the current player or not.
+	 * @param position the position of the piece
+	 * @return returns true if the piece returns to the current player, else returns false.
+	 */
+	private static boolean isBelongTo(int position) {
+		return (boardPosition[position] == PlayerTurn.getCurrentPlayer());
+	}
+	
+	/**
+	 * It finds the position of the blank space
+	 * @return returns the position of the blank space
+	 */
+	private static int blankPosition() {
+		for(int i = 0; i < GAME_SIZE; ++i) {
+			if(boardPosition[i] == -1) return i;
+		}
+		return -1;
+	}
+	
 	public static void main(String [] args) {
 		System.out.print(boardToString());
 	}
